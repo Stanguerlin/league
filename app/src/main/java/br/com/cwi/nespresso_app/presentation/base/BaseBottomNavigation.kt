@@ -3,9 +3,9 @@ package br.com.cwi.nespresso_app.presentation.base
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import br.com.cwi.nespresso_app.R
-import br.com.cwi.nespresso_app.presentation.bag.BagActivity
-import br.com.cwi.nespresso_app.presentation.favorites.FavoritesActivity
-import br.com.cwi.nespresso_app.presentation.products.ProductsActivity
+import br.com.cwi.nespresso_app.presentation.feature.champions.ChampionActivity
+import br.com.cwi.nespresso_app.presentation.feature.items.FavoriteActivity
+import br.com.cwi.nespresso_app.presentation.feature.initial.InitialActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 abstract class BaseBottomNavigation : AppCompatActivity() {
@@ -27,22 +27,22 @@ abstract class BaseBottomNavigation : AppCompatActivity() {
 
     private fun setUpBottomNavigationActions() {
 
-        getBottomNavigation().setOnNavigationItemSelectedListener {
+        getBottomNavigation().setOnItemSelectedListener {
             if (it.itemId != this.currentTab) when (it.itemId) {
-                R.id.products_menu -> {
-                    val intent = Intent(this, ProductsActivity::class.java)
+                R.id.initial_menu -> {
+                    val intent = Intent(this, InitialActivity::class.java)
                     startActivity(intent)
                 }
-                R.id.favorites_menu -> {
-                    val intent = Intent(this, FavoritesActivity::class.java)
+                R.id.items_menu -> {
+                    val intent = Intent(this, FavoriteActivity::class.java)
                     startActivity(intent)
                 }
-                R.id.bag_menu -> {
-                    val intent = Intent(this, BagActivity::class.java)
+                R.id.champions_menu -> {
+                    val intent = Intent(this, ChampionActivity::class.java)
                     startActivity(intent)
                 }
             }
-            return@setOnNavigationItemSelectedListener true
+            return@setOnItemSelectedListener true
         }
     }
 

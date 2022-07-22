@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -42,6 +43,11 @@ ext {
     moshi_version = "1.12.0"
     glide_version = "4.12.0"
     retrofit_version = "2.9.0"
+    koin_version = "2.1.5"
+    room_version = "2.4.0"
+    mockk_version = "1.11.0"
+    coroutine_version = "1.4.2"
+    arch_version = "2.1.0"
 }
 
 dependencies {
@@ -53,6 +59,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     // Android Test
     testImplementation 'junit:junit:4.+'
@@ -69,4 +76,24 @@ dependencies {
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+
+    //Koin
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-androidx-scope:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+
+    //Room
+    implementation("androidx.room:room-runtime:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+
+    //Mockk
+    implementation("io.mockk:mockk:$mockk_version")
+    implementation("io.mockk:mockk-android:$mockk_version")
+
+    //Core Testing
+    testImplementation "androidx.arch.core:core-testing:$arch_version"
+
+    //Coroutines Test
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutine_version")
+
 }

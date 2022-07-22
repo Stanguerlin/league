@@ -1,14 +1,8 @@
 <resources>
-    <string name="app_name">nespresso_app</string>
-    <string name="txt_coffees">Cafés</string>
-    <string name="text_coffee_subtitle">Cremosos, espumosos, hmm</string>
-    <string name="txt_machines">Máquinas</string>
-    <string name="text_machine_subtitle">Sem elas não rola café</string>
-    <string name="txt_accessories">Acessórios</string>
-    <string name="txt_accessories_subtitle">Pra completar a balaca</string>
-    <string name="title_activity_accessorie">AccessorieActivity</string>
-    <string name="txt_intensity">Intensidade: %d</string>
+    <string name="app_name">League</string>
 
+    <string name="txt_error_title">Opss, algo deu errado</string>
+    <string name="txt_error_subtitle">Tente novamente mais tarde</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
